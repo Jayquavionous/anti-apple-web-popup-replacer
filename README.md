@@ -1,5 +1,5 @@
 # anti-apple-web-popup-remover
-a userscript (compatible with the [Userscripts](https://github.com/quoid/userscripts) Safari extension, and hypothetically [Tampermonkey](https://www.tampermonkey.net) too) designed to remove eepyfemboi's "anti-apple-web-popup" [eepyfemboi's "anti-apple-web-popup".](https://github.com/eepyfemboi/anti-apple-web-popup)
+a userscript (compatible with the [Userscripts](https://github.com/quoid/userscripts) Safari extension, and hypothetically [Tampermonkey](https://www.tampermonkey.net) too) designed to remove [eepyfemboi's "anti-apple-web-popup".](https://github.com/eepyfemboi/anti-apple-web-popup)
 
 <div style="display: flex">
   <img src="https://github.com/forcequitOS/anti-apple-web-popup-remover/blob/main/before.png?raw=true" width="45%">
