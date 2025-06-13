@@ -11,6 +11,8 @@
 
 (function() {
     'use strict';
+
+    // Original script that removes the original pop-up (Injected directly at runtime to ensure no double pop-ups)
     const script = document.createElement('script');
     script.textContent = `
     Object.defineProperty(window, 'do_anti_apple_popup', {
@@ -27,10 +29,12 @@
     `;
     document.documentElement.appendChild(script);
 
+    // biscuit haha bri'ish
     function biscuit(name) {
         return document.cookie.split('; ').some(c => c.startsWith(name + '='));
     }
 
+    // basically the same code as the original pop-up but ofc i changed the message
     function appleCheck() {
     return (/Mac|iPhone|iPod|iPad/i.test(navigator.userAgent) ||
             (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 0)
@@ -41,8 +45,8 @@
     popup.innerHTML = `
         <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background: #fff; box-shadow: 0px 0px 10px rgba(0,0,0,0.3); border-radius: 10px; z-index: 1000; text-align: center;">
             <h2>Hello! You are seeing this because it appears that this website has the infamous 'anti-apple-web-popup' script in place.</h2>
-            <p>Even tho I personally agree with what the original script says about Apple, it does not justify lecturing and attacking people who visit this website on an Apple device.<br>
-            It's okay if you are using Apple products and I am tired of people shunning on others for making personal decisions that doesn't affect them in any way.<br>
+            <p>Even tho I personally agree with what the original script says about Apple, it does not justify lecturing and attacking people who visit this website on an Apple device. That's just petty in my opinion.<br>
+            It's okay if you are using Apple products and I am tired of people shaming on others for making personal decisions that doesn't affect them in any way.<br>
             Use whatever you prefer, it's yours after all! Your choice of devices should not be dictated by random people on the internet.<br>
             Have a lovely day and stay safe! :)</p>
             <button id="apple-popup-dismiss-btn" style="margin-right: 10px;">OK</button>
@@ -60,7 +64,14 @@
     });
     };
 
-    if (appleCheck() && !biscuit("hideApplePopup")) {
-        window.addEventListener("DOMContentLoaded", useWhateverYouWant);
-    }
+    // check if the script was even there at all before showing the modified pop-up
+    window.addEventListener('DOMContentLoaded', () => {
+        const pettyCheck = Array.from(document.scripts).some(script =>
+        script.src.includes('sleepie.dev/anti-apple-alert.js')
+        );
+
+        if (pettyCheck && appleCheck() && !biscuit('hideApplePopup')) {
+        useWhateverYouWant();
+        }
+    });
 })();
