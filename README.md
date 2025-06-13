@@ -3,6 +3,10 @@ a userscript (compatible with the [Userscripts](https://github.com/quoid/userscr
 
 the message is basically telling user that its fine use whatever they like and don't be judgemental about what devices other are using.
 
+main limitation of this script is that it only checks for the exact js file that is linked on eepyfemboi's github page, so if the website implemented the script in a different way than what was instructed in the original script, this script will not work.
+
 i know im two months late to this whole thing but idk i got bored and randomly remembered about this extension so i got this idea.
+
+also btw this is just all jokes and games, dont take ts seriously 💀🙏
 
 :3
